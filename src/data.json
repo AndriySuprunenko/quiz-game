@@ -1,0 +1,69 @@
+[
+  {
+    "question": "What is the correct command to create a new React project?",
+    "answers": [
+      { "title": "npx create-react-app my-app", "id": 1 },
+      { "title": "npx init react-app my-app", "id": 2 },
+      { "title": "npm create-react-app my-app", "id": 3 },
+      { "title": "npm init react-app my-app", "id": 4 }
+    ],
+    "id": 1,
+    "rightAnswer": 1
+  },
+  {
+    "question": "What does JSX stand for?",
+    "answers": [
+      { "title": "JavaScript XML", "id": 1 },
+      { "title": "JavaScript eXtension", "id": 2 },
+      { "title": "Java Standard Extension", "id": 3 },
+      { "title": "JavaScript X", "id": 4 }
+    ],
+    "id": 2,
+    "rightAnswer": 1
+  },
+  {
+    "question": "What is the correct way to import React?",
+    "answers": [
+      { "title": "import * as React from \"react\"", "id": 1 },
+      { "title": "import React from \"react\"", "id": 2 },
+      { "title": "import { React } from \"react\"", "id": 3 },
+      { "title": "import React from \"react\"", "id": 4 }
+    ],
+    "id": 3,
+    "rightAnswer": 4
+  },
+  {
+    "question": "What is the correct way to render a React component?",
+    "answers": [
+      {
+        "title": "ReactDOM.render(<App />, document.getElementById(\"app\"))",
+        "id": 1
+      },
+      {
+        "title": "ReactDOM.render(<App />, document.getElementById(\"root\"))",
+        "id": 2
+      },
+      {
+        "title": "ReactDOM.render(<App />, document.getElementById(\"root\"))",
+        "id": 3
+      },
+      {
+        "title": "ReactDOM.render(<App />, document.getElementById(\"app\"))",
+        "id": 4
+      }
+    ],
+    "id": 4,
+    "rightAnswer": 3
+  },
+  {
+    "question": "When using React, what is the recommended way to handle AJAX requests?",
+    "answers": [
+      { "title": "Use the axios library", "id": 1 },
+      { "title": "Use the fetch API", "id": 2 },
+      { "title": "Use the jQuery library", "id": 3 },
+      { "title": "Use the request library", "id": 4 }
+    ],
+    "id": 5,
+    "rightAnswer": 2
+  }
+]
