@@ -1,7 +1,9 @@
+import Data from './components/Data';
+
 const App = () => {
   return (
     <>
-      <h1>Vite + React</h1>
+      <Data />
     </>
   );
 };
