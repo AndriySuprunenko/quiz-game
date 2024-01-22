@@ -1,11 +1,5 @@
 import Data from './components/Data';
 
-const App = () => {
-  return (
-    <>
-      <Data />
-    </>
-  );
-};
+const App = () => <Data />;
 
 export default App;
