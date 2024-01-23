@@ -1,5 +1,5 @@
-import Data from './components/Data';
+import Page from './pages/Page';
 
-const App = () => <Data />;
+const App = () => <Page />;
 
 export default App;

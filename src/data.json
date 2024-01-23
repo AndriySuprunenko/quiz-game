@@ -8,7 +8,7 @@
       { "title": "npm init react-app my-app", "id": 4 }
     ],
     "id": 1,
-    "rightAnswer": 1
+    "rightAnswer": 0
   },
   {
     "question": "What does JSX stand for?",
@@ -19,7 +19,7 @@
       { "title": "JavaScript X", "id": 4 }
     ],
     "id": 2,
-    "rightAnswer": 1
+    "rightAnswer": 0
   },
   {
     "question": "What is the correct way to import React?",
@@ -30,7 +30,7 @@
       { "title": "import React from \"react\"", "id": 4 }
     ],
     "id": 3,
-    "rightAnswer": 4
+    "rightAnswer": 3
   },
   {
     "question": "What is the correct way to render a React component?",
@@ -53,7 +53,7 @@
       }
     ],
     "id": 4,
-    "rightAnswer": 3
+    "rightAnswer": 2
   },
   {
     "question": "When using React, what is the recommended way to handle AJAX requests?",
@@ -64,6 +64,6 @@
       { "title": "Use the request library", "id": 4 }
     ],
     "id": 5,
-    "rightAnswer": 2
+    "rightAnswer": 1
   }
 ]
