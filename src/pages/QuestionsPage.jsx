@@ -5,7 +5,7 @@ import Question from '../components/Question';
 import Button from '../components/Button';
 import Loader from '../components/Loader';
 
-const Page = () => {
+const QuestionsPage = () => {
   const [questions, setQuestions] = useState(null);
   const [step, setStep] = useState(0);
 
@@ -22,7 +22,12 @@ const Page = () => {
         <div className="flex flex-col justify-center items-center w-full m-auto p-14 bg-gray-400 h-screen">
           {questions[step] !== undefined ? (
             <div className="py-7">
-              <Question key={questions[step].id} {...questions[step]} />
+              <Question
+                id={questions[step].id}
+                question={questions[step].question}
+                answers={questions[step].answers}
+                rightAnswer={questions[step].rightAnswer}
+              />
               <div className="grid grid-cols-2 gap-5 mt-20 justify-items-center border-x-2 border-sky-300 p-3 rounded-lg">
                 {step >= 1 ? (
                   <Button
@@ -61,4 +66,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default QuestionsPage;
