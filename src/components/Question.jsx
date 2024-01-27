@@ -4,15 +4,17 @@ import PropTypes from 'prop-types';
 import Button from './Button';
 
 const Question = ({ id, question, answers, rightAnswer }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
   const [isCorrect, setIsCorrect] = useState(null);
 
   const handleOptionChange = (event) => {
     const correctAnswer = event === rightAnswer;
 
-    setSelectedOption(event);
     setIsCorrect(correctAnswer);
   };
+
+  const buttonColor = isCorrect ? 'focus:bg-green-500' : 'focus:bg-red-500';
+
+  // const disableButtons = isCorrect !== null;
 
   return (
     <div className="py-7">
@@ -21,19 +23,15 @@ const Question = ({ id, question, answers, rightAnswer }) => {
         {question}
       </h1>
       <div className="mt-6 grid lg:grid-cols-2 sm:grid-cols-1 gap-5">
-        {answers.map((answer, event) => (
+        {answers.map((answer) => (
           <Button
             id={answer.id}
             title={answer.title}
             key={answer.id}
-            handleClick={() => handleOptionChange(event)}
+            handleClick={() => handleOptionChange(answer.id)}
+            className={`${buttonColor}`}
           />
         ))}
-        {selectedOption && (
-          <div className="mt-6">
-            <p className="text-2xl">{isCorrect ? 'Correct' : 'Incorrect'}</p>
-          </div>
-        )}
       </div>
     </div>
   );

@@ -39,7 +39,7 @@ const QuestionsPage = () => {
                   <Button
                     handleClick={handlePrev}
                     title="Prev"
-                    className="bg-gray-500 max-w-20 hover:bg-gray-500 cursor-not-allowed active:bg-gray-500"
+                    className="max-w-20"
                     disabled={true}
                   />
                 )}
