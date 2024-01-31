@@ -1,6 +1,5 @@
 const Loader = () => (
   <div className="flex items-center h-screen flex-col justify-center">
-    <h1>Loading...</h1>
     <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto mt-10">
       <div className="animate-pulse flex space-x-4">
         <div className="rounded-full bg-slate-700 h-10 w-10"></div>

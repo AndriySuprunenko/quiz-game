@@ -1,5 +1,5 @@
-import QuestionsPage from './pages/QuestionsPage';
+import Questions from './pages/Questions';
 
-const App = () => <QuestionsPage />;
+const App = () => <Questions />;
 
 export default App;

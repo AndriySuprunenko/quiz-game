@@ -5,16 +5,16 @@ import Button from './Button';
 
 const Question = ({ id, question, answers, rightAnswer }) => {
   const [isCorrect, setIsCorrect] = useState(null);
+  const [score, setScore] = useState(0);
 
   const handleOptionChange = (event) => {
     const correctAnswer = event === rightAnswer;
 
+    setScore(score + (correctAnswer ? 1 : 0));
     setIsCorrect(correctAnswer);
   };
 
   const buttonColor = isCorrect ? 'focus:bg-green-500' : 'focus:bg-red-500';
-
-  // const disableButtons = isCorrect !== null;
 
   return (
     <div className="py-7">
@@ -29,7 +29,7 @@ const Question = ({ id, question, answers, rightAnswer }) => {
             title={answer.title}
             key={answer.id}
             handleClick={() => handleOptionChange(answer.id)}
-            className={`${buttonColor}`}
+            className={buttonColor}
           />
         ))}
       </div>
@@ -40,7 +40,12 @@ const Question = ({ id, question, answers, rightAnswer }) => {
 Question.propTypes = {
   id: PropTypes.number.isRequired,
   question: PropTypes.string.isRequired,
-  answers: PropTypes.array.isRequired,
+  answers: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
   rightAnswer: PropTypes.number.isRequired,
 };
 
