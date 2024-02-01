@@ -1,4 +1,3 @@
-// import { Children } from 'react';
 import PropTypes from 'prop-types';
 
 const Button = ({ id, handleClick, title, className, disabled }) => (
