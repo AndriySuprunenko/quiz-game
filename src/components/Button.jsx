@@ -1,3 +1,4 @@
+// import { Children } from 'react';
 import PropTypes from 'prop-types';
 
 const Button = ({ id, handleClick, title, className, disabled }) => (
@@ -20,7 +21,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  id: 1,
+  id: null,
   disabled: false,
   className: '',
 };

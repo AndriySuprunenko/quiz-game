@@ -1,4 +1,4 @@
-import { useState, Children } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Button from './Button';
@@ -19,7 +19,7 @@ const Question = ({ id, question, answers, rightAnswer }) => {
   return (
     <div className="py-7">
       <h1 className="text-3xl first:mt-0 mt-10 w-fit m-auto">
-        <span className="mr-1">{Children.count(id)}.</span>
+        <span className="mr-1">{id}.</span>
         {question}
       </h1>
       <div className="mt-6 grid lg:grid-cols-2 sm:grid-cols-1 gap-5">
