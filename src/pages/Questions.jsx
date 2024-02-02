@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import jsonData from '../data.json';
 import Question from '../components/Question';
 import Button from '../components/Button';
 import Loader from '../components/Loader';
-import Result from '../pages/Result';
 
 const Questions = () => {
   const [questions, setQuestions] = useState(null);
@@ -18,6 +18,8 @@ const Questions = () => {
 
   const handleNext = () => setStep(step + 1);
   const handlePrev = () => setStep(step - 1);
+
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -46,7 +48,7 @@ const Questions = () => {
               </div>
             </div>
           ) : (
-            <Result />
+            navigate('/result')
           )}
         </div>
       ) : (

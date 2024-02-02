@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const Button = ({ id, handleClick, title, className, disabled }) => (
   <button
-    className={`bg-blue-400 hover:bg-blue-500 text-white text-lg transition p-3 rounded-3xl w-full disabled:bg-gray-500 disabled:cursor-not-allowed ${className}`}
+    className={`flex items-center justify-center bg-blue-400 hover:bg-blue-500 text-white text-lg transition p-3 rounded-3xl w-full disabled:bg-gray-500 disabled:cursor-not-allowed ${className}`}
     onClick={handleClick}
     disabled={disabled}
   >
