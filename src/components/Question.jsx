@@ -1,19 +1,8 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Button from './Button';
 
-const Question = ({ id, question, answers, rightAnswer }) => {
-  const [isCorrect, setIsCorrect] = useState(null);
-  const [score, setScore] = useState(0);
-
-  const handleOptionChange = (event) => {
-    const correctAnswer = event === rightAnswer;
-
-    setScore(score + (correctAnswer ? 1 : 0));
-    setIsCorrect(correctAnswer);
-  };
-
+const Question = ({ id, question, answers, isCorrect, handleOptionChange }) => {
   const buttonColor = isCorrect ? 'focus:bg-green-500' : 'focus:bg-red-500';
 
   return (
@@ -46,7 +35,8 @@ Question.propTypes = {
       title: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  rightAnswer: PropTypes.number.isRequired,
+  isCorrect: PropTypes.bool.isRequired,
+  handleOptionChange: PropTypes.func.isRequired,
 };
 
 export default Question;
