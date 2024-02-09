@@ -6,14 +6,15 @@ import Question from '../components/Question';
 import Button from '../components/Button';
 import Loader from '../components/Loader';
 import { ROUTES } from '../constants/constants';
+import { useQuiz } from '../context/QuizContext';
 
 const Questions = () => {
   const navigate = useNavigate();
+  const { increaseCorrectAnswersCount } = useQuiz();
 
   const [questions, setQuestions] = useState(null);
   const [step, setStep] = useState(0);
   const [answer, setAnswer] = useState(null);
-  const [score, setScore] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
@@ -24,7 +25,7 @@ const Questions = () => {
   const handleOptionChange = (event) => {
     const correctAnswer = event === questions[step].rightAnswer;
 
-    setScore(score + (correctAnswer ? 1 : 0));
+    correctAnswer ? increaseCorrectAnswersCount() : null;
     setAnswer(correctAnswer);
   };
 
@@ -46,7 +47,6 @@ const Questions = () => {
         <div className="flex flex-col justify-center items-center w-full m-auto p-14 h-screen">
           {questions[step] ? (
             <div className="py-7">
-              {score}
               <Question
                 id={questions[step].id}
                 question={questions[step].question}
