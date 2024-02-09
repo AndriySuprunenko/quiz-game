@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ROUTES } from '../constants/constants';
 
 const Start = () => {
   return (
@@ -7,7 +8,7 @@ const Start = () => {
         <h1 className="text-black text-5xl">Start Quiz Game</h1>
         <Link
           className="text-white text-2xl p-5 bg-green-500 hover:bg-green-600 mt-10 rounded-md"
-          to="/questions"
+          to={ROUTES.QUESTIONS}
         >
           Start
         </Link>

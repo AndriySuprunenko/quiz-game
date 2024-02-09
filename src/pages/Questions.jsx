@@ -5,6 +5,7 @@ import jsonData from '../data.json';
 import Question from '../components/Question';
 import Button from '../components/Button';
 import Loader from '../components/Loader';
+import { ROUTES } from '../constants/constants';
 
 const Questions = () => {
   const navigate = useNavigate();
@@ -69,7 +70,7 @@ const Questions = () => {
               </div>
             </div>
           ) : (
-            navigate('/result')
+            navigate(ROUTES.RESULT)
           )}
         </div>
       ) : (
