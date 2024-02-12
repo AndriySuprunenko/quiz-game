@@ -20,6 +20,7 @@ const Questions = () => {
     setTimeout(() => {
       setQuestions(jsonData);
     }, 2000);
+    clearTimeout();
   }, []);
 
   const handleOptionChange = (event) => {
