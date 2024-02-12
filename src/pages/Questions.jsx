@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import jsonData from '../data.json';
@@ -6,11 +6,11 @@ import Question from '../components/Question';
 import Button from '../components/Button';
 import Loader from '../components/Loader';
 import { ROUTES } from '../constants/constants';
-import { useQuiz } from '../context/QuizContext';
+import { QuizContext } from '../context/QuizContext';
 
 const Questions = () => {
   const navigate = useNavigate();
-  const { increaseCorrectAnswersCount } = useQuiz();
+  const { increaseCorrectAnswersCount } = useContext(QuizContext);
 
   const [questions, setQuestions] = useState(null);
   const [step, setStep] = useState(0);
@@ -48,9 +48,9 @@ const Questions = () => {
           {questions[step] ? (
             <div className="py-7">
               <Question
-                id={questions[step].id}
-                question={questions[step].question}
-                answers={questions[step].answers}
+                id={questions[step]?.id}
+                question={questions[step]?.question}
+                answers={questions[step]?.answers}
                 handleOptionChange={handleOptionChange}
                 isCorrect={answer}
               />
@@ -59,7 +59,7 @@ const Questions = () => {
                   handleClick={handlePrev}
                   title="Prev"
                   className="bg-yellow-500 hover:bg-yellow-600"
-                  disabled={step === 0 ? true : false}
+                  disabled={!step}
                 />
                 <Button
                   handleClick={handleNext}
